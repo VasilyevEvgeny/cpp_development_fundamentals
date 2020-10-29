@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
-project(algorithmic_foundation)
+project(white_belt)
 
 set(CMAKE_CXX_STANDARD 14)
 
