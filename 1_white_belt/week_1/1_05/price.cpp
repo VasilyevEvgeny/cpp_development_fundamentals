@@ -1,3 +1,5 @@
+// https://www.coursera.org/learn/c-plus-plus-white/programming/baBml/raschiot-stoimosti-tovara
+
 #include <iostream>
 
 using namespace std;

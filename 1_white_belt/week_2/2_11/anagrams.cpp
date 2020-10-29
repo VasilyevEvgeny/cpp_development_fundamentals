@@ -1,8 +1,9 @@
+// https://www.coursera.org/learn/c-plus-plus-white/programming/5NGSX/anaghrammy
+
 #include <iostream>
 #include <vector>
 #include <map>
 #include <string>
-
 
 using namespace std;
 
@@ -37,11 +38,7 @@ int main() {
 
 	for (int i = 0; i < N; ++i) {
 		cin >> words_left[i] >> words_right[i];
-
 	}
-
-	//for (int i = 0 ;i < N; ++i)
-	//	cout << words_left[i] << " " << words_right[i] << endl;
 
 	for (int n_word = 0; n_word < N; ++n_word) {
 		map<char,int> map_left = BuildCharCounters(words_left[n_word]);
@@ -51,9 +48,6 @@ int main() {
 		else
 			cout << "NO" << endl;
 	}
-
-
-	//print_map(map_1);
 
 	return 0;
 }

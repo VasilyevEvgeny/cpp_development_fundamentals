@@ -1,3 +1,5 @@
+// https://www.coursera.org/learn/c-plus-plus-white/programming/ndSVY/vyvod-s-tochnost-iu
+
 #include <iostream>
 #include <fstream>
 #include <iomanip>

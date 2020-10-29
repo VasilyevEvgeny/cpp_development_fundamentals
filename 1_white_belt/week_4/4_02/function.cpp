@@ -1,9 +1,4 @@
-/*
- * main.cpp
- *
- *  Created on: Apr 27, 2018
- *      Author: evgeny
- */
+// https://www.coursera.org/learn/c-plus-plus-white/programming/8O6Xb/obratimaia-funktsiia
 
 #include <iostream>
 #include <string>
@@ -76,34 +71,32 @@ private:
 	vector<FunctionPart> parts;
 };
 
+/*Function MakeWeightFunction(const Params& params, const Image& image) {
+    Function function;
+    function.AddPart('-', image.freshness * params.a + params.b);
+    function.AddPart('+', image.rating * params.c);
 
-
-/*Function MakeWeightFunction(const Params& params,
-                            const Image& image) {
-  Function function;
-  function.AddPart('-', image.freshness * params.a + params.b);
-  function.AddPart('+', image.rating * params.c);
-  return function;
+    return function;
 }
 
 double ComputeImageWeight(const Params& params, const Image& image) {
-  Function function = MakeWeightFunction(params, image);
-  return function.Apply(image.quality);
+    Function function = MakeWeightFunction(params, image);
+    return function.Apply(image.quality);
 }
 
-double ComputeQualityByWeight(const Params& params,
-                              const Image& image,
-                              double weight) {
-  Function function = MakeWeightFunction(params, image);
-  function.Invert();
-  return function.Apply(weight);
-}*/
+double ComputeQualityByWeight(const Params& params, const Image& image, double weight) {
+    Function function = MakeWeightFunction(params, image);
+    function.Invert();
 
-/*int main() {
+    return function.Apply(weight);
+}
+
+int main() {
   Image image = {10, 2, 6};
   Params params = {4, 2, 6};
   cout << ComputeImageWeight(params, image) << endl;
   cout << ComputeQualityByWeight(params, image, 46) << endl;
+
   return 0;
 }*/
 

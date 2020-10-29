@@ -1,3 +1,5 @@
+// https://www.coursera.org/learn/c-plus-plus-white/programming/Ax0l8/dielieniie
+
 #include <iostream>
 
 using namespace std;

@@ -1,7 +1,7 @@
+// https://www.coursera.org/learn/c-plus-plus-white/programming/sO7Vq/final-naia-zadacha-kursa
+
 #include <iostream>
 #include <string>
-#include <vector>
-#include <algorithm>
 #include <set>
 #include <map>
 #include <sstream>
@@ -11,6 +11,7 @@
 using namespace std;
 
 class Date {
+
 public:
 	Date() {
 		year = 0;
@@ -43,25 +44,32 @@ private:
 };
 
 bool operator<(const Date& lhs, const Date& rhs) {
-	if (lhs.GetYear() < rhs.GetYear())
-		return true;
-	else if (lhs.GetYear() > rhs.GetYear())
-		return false;
+	if (lhs.GetYear() < rhs.GetYear()) {
+        return true;
+	}
+	else if (lhs.GetYear() > rhs.GetYear()) {
+        return false;
+    }
 	else {
-		if (lhs.GetMonth() < rhs.GetMonth())
-			return true;
-		else if (lhs.GetMonth() > rhs.GetMonth())
-			return false;
+		if (lhs.GetMonth() < rhs.GetMonth()) {
+            return true;
+		}
+		else if (lhs.GetMonth() > rhs.GetMonth()) {
+            return false;
+		}
 		else {
-			if (lhs.GetDay() < rhs.GetDay())
-				return true;
-			else
-				return false;
+			if (lhs.GetDay() < rhs.GetDay()) {
+                return true;
+			}
+			else {
+                return false;
+            }
 		}
 	}
 }
 
 class Database {
+
 public:
 	void AddEvent(const Date& date, const string& event) {
 		events[date].insert(event);
@@ -74,8 +82,8 @@ public:
 	int DeleteDate(const Date& date) {
 		int N = events[date].size();
 		events.erase(date);
-		return N;
 
+		return N;
 	}
 
 	void Find(const Date& date) {
@@ -110,13 +118,15 @@ string ReadEvent(stringstream &ss) {
 }
 
 void ReadSeparator(stringstream& ss) {
-	if (ss.peek() == '-')
-		ss.ignore(1);
-	else
-		throw exception();
+	if (ss.peek() == '-') {
+        ss.ignore(1);
+	}
+	else {
+        throw exception();
+	}
 }
 
-Date ReadDate(string date_str) {
+Date ReadDate(string& date_str) {
 	stringstream ss(date_str);
 	int year = 0, month = 0, day = 0;
 
@@ -135,11 +145,13 @@ Date ReadDate(string date_str) {
 	// day
 	if ((ss >> day).fail()) { throw exception(); }
 
-	if (month < 1 || month > 12)
-		throw runtime_error("Month value is invalid: " + to_string(month));
+	if (month < 1 || month > 12) {
+        throw runtime_error("Month value is invalid: " + to_string(month));
+	}
 
-	if (day < 1 || day > 31)
-		throw runtime_error("Day value is invalid: " + to_string(day));
+	if (day < 1 || day > 31) {
+        throw runtime_error("Day value is invalid: " + to_string(day));
+	}
 
 	string end;
 	ss >> end;
@@ -184,26 +196,30 @@ int main() {
 			if (ReadAndCheckDate(date, date_str)) {
 				event_name = ReadEvent(ss);
 
-				if (event_name.empty())
-					cout << "Deleted " << db.DeleteDate(date) << " events" << endl;
+				if (event_name.empty()) {
+                    cout << "Deleted " << db.DeleteDate(date) << " events" << endl;
+                }
 				else {
-					if (db.DeleteEvent(date, event_name))
-						cout << "Deleted successfully" << endl;
-					else
-						cout << "Event not found" << endl;
+					if (db.DeleteEvent(date, event_name)) {
+                        cout << "Deleted successfully" << endl;
+					}
+					else {
+                        cout << "Event not found" << endl;
+					}
 				}
 			}
 		}
 		else if (keyword == "Find") {
 			ss >> date_str;
-			if (ReadAndCheckDate(date, date_str))
-				event_name = ReadEvent(ss);
+			if (ReadAndCheckDate(date, date_str)) {
+                event_name = ReadEvent(ss);
+			}
 			db.Find(date);
 		}
 		else if (keyword == "Print") {
 			db.Print();
 		}
-		else if (keyword == "") {
+		else if (keyword.empty()) {
 			;
 		}
 		else {
@@ -216,7 +232,6 @@ int main() {
 		date_str.clear();
 
 	}
-
 
   return 0;
 }

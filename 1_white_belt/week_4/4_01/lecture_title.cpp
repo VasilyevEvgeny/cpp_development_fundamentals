@@ -1,3 +1,5 @@
+// https://www.coursera.org/learn/c-plus-plus-white/programming/PnvtW/struktura-lecturetitle
+
 #include <iostream>
 #include <vector>
 #include <string>

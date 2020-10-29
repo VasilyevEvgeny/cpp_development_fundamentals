@@ -1,3 +1,5 @@
+// https://www.coursera.org/learn/c-plus-plus-white/programming/uyK0H/chtieniie-i-vyvod-tablitsy
+
 #include <iostream>
 #include <string>
 #include <fstream>

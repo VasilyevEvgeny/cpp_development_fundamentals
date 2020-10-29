@@ -1,3 +1,5 @@
+// https://www.coursera.org/learn/c-plus-plus-white/programming/zqw0h/sortirovka-biez-uchiota-rieghistra
+
 #include <iostream>
 #include <vector>
 #include <algorithm>

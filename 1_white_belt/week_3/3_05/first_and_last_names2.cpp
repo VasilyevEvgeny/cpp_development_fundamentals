@@ -1,101 +1,130 @@
+// https://www.coursera.org/learn/c-plus-plus-white/programming/aN8U1/imiena-i-familii-2
+
 #include <iostream>
 #include <string>
 #include <vector>
 #include <map>
+
 using namespace std;
-struct FullName { //создадим структуру из имени и фамилии
-    string Name;
-    string Soname;
+
+struct FullName {
+    string name;
+    string sirname;
 };
+
 class Person {
+
 public:
     void ChangeFirstName(int year, const string& first_name) {
-        if (YearNameSoname.count(year) == 0) YearNameSoname[year].Soname = ""; //если такого года еще нет, то добавим пустую фамилию
-        YearNameSoname[year].Name = first_name; //добавим указанное имя
+        if (year_name_sirname.count(year) == 0) {
+            year_name_sirname[year].sirname = "";
+        }
+        year_name_sirname[year].name = first_name;
     }
+
     void ChangeLastName(int year, const string& last_name) {
-        if (YearNameSoname.count(year) == 0) YearNameSoname[year].Name = ""; //если такого года еще нет, то добавим пустое имя
-        YearNameSoname[year].Soname = last_name; //и добавим указанную фамилию
+        if (year_name_sirname.count(year) == 0) {
+            year_name_sirname[year].name = "";
+        }
+        year_name_sirname[year].sirname = last_name;
     }
+
     string GetFullName(int year) {
-        if (YearNameSoname.size() == 0) { //если размер = 0
-            return "Incognito"; //выводим Инкогнито
+        if (year_name_sirname.empty()) {
+            return "Incognito";
         }
         else {
-            for (const auto& i : YearNameSoname) {
-                if (year < i.first) return "Incognito"; //если искомый год меньше первого года изменения, выводим Инкогнито
-                break; //сразу выходим из цикла
+            for (const auto& i : year_name_sirname) {
+                if (year < i.first) return "Incognito";
+                break;
             }
         }
-        //иначе
-        string nm = "";
-        string sn = "";
-        for (const auto& i : YearNameSoname) { //полистаем нашу структуру
-            //и будем присваивать переменной sn значение фамилии, если она не пустая и пока искомый год больше текущего(в структуре)
-            if (i.first <= year && i.second.Soname != "") sn = i.second.Soname;
-            if (i.first <= year && i.second.Name != "") nm = i.second.Name; //тоже самое с именем
+
+        string name, sirname;;
+        for (const auto& i : year_name_sirname) {
+            if (i.first <= year && !i.second.sirname.empty()) {
+                sirname = i.second.sirname;
+            }
+            if (i.first <= year && !i.second.name.empty()) {
+                name = i.second.name;
+            }
         }
-        if(nm == "") return sn + " with unknown first name"; //условие, если имя пустое(вывод фамилии и текста)
-        else if(sn == "") return nm + " with unknown last name"; //условие, если фамилия пуста (вывод имени и текста)
-        else return nm + " " + sn; //вывод имени и фамилии
+
+        if (name.empty()) {
+            return sirname + " with unknown first name";
+        }
+        else if(sirname.empty()) {
+            return name + " with unknown last name";
+        }
+        else {
+            return name + " " + sirname;
+        }
     }
     string GetFullNameWithHistory(int year) {
-        if (YearNameSoname.size() == 0) { //если размер = 0
-            return "Incognito"; //выводим Инкогнито
+        if (year_name_sirname.empty()) {
+            return "Incognito";
         }
         else {
-            for (const auto& i : YearNameSoname) {
-                if (year < i.first) return "Incognito"; //если искомый год меньше первого года изменения, выводим Инкогнито
-                break; //сразу выходим из цикла
+            for (const auto& i : year_name_sirname) {
+                if (year < i.first) {
+                    return "Incognito";
+                }
+                break;
             }
         }
-        //иначе
-        string nm = "";
-        string sn = "";
-        vector<string> secondnames; //вектор предыдущих фамилий
-        vector<string> firstnames; //вектор предыдущих имен
-        for (const auto& i : YearNameSoname) { //полистаем нашу структуру
-            //и будем присваивать переменной sn значение фамилии, если она не пустая и пока искомый год больше текущего(в структуре)
-            if (i.first <= year && i.second.Soname != "") { //если Фамилия непуста
-                if (i.second.Soname != sn && sn != "") { //и не повторяется
-                    secondnames.push_back(sn);
+
+        string name, sirname;
+        vector<string> sirnames;
+        vector<string> names;
+
+        for (const auto& i : year_name_sirname) {
+            if (i.first <= year && !i.second.sirname.empty()) {
+                if (i.second.sirname != sirname && !sirname.empty()) {
+                    sirnames.push_back(sirname);
                 }
-                sn = i.second.Soname; //тут присваиваем
+                sirname = i.second.sirname;
             }
-            if (i.first <= year && i.second.Name != "") { //то же самое с Именем
-                if (i.second.Name != nm && nm != "") {
-                    firstnames.push_back(nm);
+            if (i.first <= year && !i.second.name.empty()) {
+                if (i.second.name != name && !name.empty()) {
+                    names.push_back(name);
                 }
-                nm = i.second.Name;
+                name = i.second.name;
             }
         }
-        //инициализируем переменные в которые будем складывать фамилии и имена в обратном порядке
-        string secnames_string = "", firstnames_string = "";
-        if (secondnames.size() > 0) { //если вектор с фамилиями не пуст, то
-            secnames_string += " (" + secondnames[secondnames.size() - 1]; //добавим в строку пробел, скобку и предыдущую фамилию
-            if (secondnames.size() > 1) {
-                for (int i = secondnames.size() - 1; i > 0; --i) {//в обратном порядке
-                    secnames_string += ", " + secondnames[i - 1]; // добавим в строку остальные фамилии
+
+        string names_str, sirnames_str;
+        if (!sirnames.empty()) {
+            sirnames_str += " (" + sirnames[sirnames.size() - 1];
+            if (sirnames.size() > 1) {
+                for (size_t i = sirnames.size() - 1; i > 0; --i) {
+                    sirnames_str += ", " + sirnames[i - 1];
                 }
             }
-            secnames_string += ")"; //закроем строку скобкой
+            sirnames_str += ")";
         }
-        //аналогично с именами
-        if (firstnames.size() > 0) {
-            firstnames_string += " (" + firstnames[firstnames.size() - 1];
-            if (firstnames.size() >1) {
-                for (int i = firstnames.size() - 1; i > 0; --i) {
-                    firstnames_string += ", " + firstnames[i - 1];
+
+        if (!names.empty()) {
+            names_str += " (" + names[names.size() - 1];
+            if (names.size() >1) {
+                for (size_t i = names.size() - 1; i > 0; --i) {
+                    names_str += ", " + names[i - 1];
                 }
             }
-            firstnames_string += ")";
+            names_str += ")";
         }
-        //в зависимости от наличия Имени и Фамилии, вернем соответствующие сообщения
-        if (nm == "") return sn + secnames_string + " with unknown first name";
-        else if (sn == "") return nm + firstnames_string + " with unknown last name";
-        else return nm + firstnames_string + " " + sn + secnames_string;
+
+        if (name.empty()) {
+            return sirname + sirnames_str + " with unknown first name";
+        }
+        else if (sirname.empty()) {
+            return name + names_str + " with unknown last name";
+        }
+        else {
+            return name + names_str + " " + sirname + sirnames_str;
+        }
     }
-private: //объявим в приватной секции
-    map<int, FullName> YearNameSoname; //структуру с годом и полным именем
+
+private:
+    map<int, FullName> year_name_sirname;
 };
 

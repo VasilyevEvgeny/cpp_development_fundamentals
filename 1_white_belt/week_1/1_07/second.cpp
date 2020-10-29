@@ -1,3 +1,5 @@
+// https://www.coursera.org/learn/c-plus-plus-white/programming/SG7h0/vtoroie-vkhozhdieniie
+
 #include <iostream>
 #include <string>
 

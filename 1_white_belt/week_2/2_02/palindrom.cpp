@@ -1,3 +1,5 @@
+// https://www.coursera.org/learn/c-plus-plus-white/programming/e9mOb/palindrom
+
 //#include <iostream>
 //#include <string>
 

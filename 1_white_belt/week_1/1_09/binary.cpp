@@ -1,3 +1,5 @@
+// https://www.coursera.org/learn/c-plus-plus-white/programming/IbmX8/dvoichnyie-chisla
+
 #include <iostream>
 #include <vector>
 #include <algorithm>

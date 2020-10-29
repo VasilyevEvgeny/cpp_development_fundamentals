@@ -1,5 +1,6 @@
+// https://www.coursera.org/learn/c-plus-plus-white/programming/zzTXi/stroka
+
 #include <iostream>
-#include <vector>
 #include <string>
 
 using namespace std;
@@ -30,9 +31,6 @@ public:
 
 private:
 	string my_string;
-
-
-
 
 };
 

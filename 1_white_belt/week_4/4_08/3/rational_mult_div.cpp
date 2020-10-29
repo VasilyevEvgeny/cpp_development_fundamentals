@@ -1,4 +1,7 @@
+// https://www.coursera.org/learn/c-plus-plus-white/programming/pZwQ4/klass-rational
+
 #include <iostream>
+
 using namespace std;
 
 class Rational {
@@ -46,7 +49,6 @@ private:
     int denominator;
 };
 
-// Реализуйте для класса Rational операторы ==, + и -
 
 bool operator== (const Rational& rational_left, const Rational& rational_right) {
 	if (rational_left.Numerator() == rational_right.Numerator() &&
@@ -70,8 +72,6 @@ Rational operator- (const Rational& rational_left, const Rational& rational_righ
 	return {gen_numerator, gen_denominator};
 }
 
-
-// Реализуйте для класса Rational операторы * и /
 
 Rational operator* (const Rational& rational_left, const Rational& rational_right) {
 	int gen_denominator = rational_left.Denominator() * rational_right.Denominator();

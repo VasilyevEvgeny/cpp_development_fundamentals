@@ -1,10 +1,11 @@
+// https://www.coursera.org/learn/c-plus-plus-white/programming/Gi9dw/avtobusnyie-ostanovki-1
+
 #include <iostream>
 #include <string>
 #include <vector>
 #include <map>
 
 using namespace std;
-
 
 void update_buses_for_stops(const map<string,vector<string>>& stops_for_buses, map<string,vector<string>>& buses_for_stops) {
 	for (const auto& item : stops_for_buses) {
@@ -84,19 +85,11 @@ int main() {
 					}
 					cout << endl;
 				}
-				/*for (const auto& item : buses_for_stops) {
-					cout << "Stop " << item.first << ":";
-					for (const auto& bus : item.second) {
-						cout << " " << bus;
-					}
-					cout << endl;
-				}*/
 			}
 			else {
 				cout << "No buses" << endl;
 			}
 		}
-
 	}
 
 	return 0;

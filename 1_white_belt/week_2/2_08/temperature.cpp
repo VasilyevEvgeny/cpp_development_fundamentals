@@ -1,10 +1,4 @@
-/*
- * main.cpp
- *
- *  Created on: Apr 16, 2018
- *      Author: evgeny
- */
-
+// https://www.coursera.org/learn/c-plus-plus-white/programming/oGdDI/sriedniaia-tiempieratura
 
 #include <iostream>
 #include <vector>

@@ -1,3 +1,5 @@
+// https://www.coursera.org/learn/c-plus-plus-white/programming/c3YTB/otsortirovannyie-stroki
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -7,21 +9,23 @@ using namespace std;
 
 class SortedStrings {
 	public:
-	  void AddString(const string& s) {
-		v.push_back(s);
+        void AddString(const string& s) {
+            v.push_back(s);
+        }
+        vector<string> GetSortedStrings() {
+        sort(begin(v), end(v));
+
+        return v;
 	  }
-	  vector<string> GetSortedStrings() {
-		sort(begin(v), end(v));
-		return v;
-	  }
+
 	private:
-	  vector<string> v;
+        vector<string> v;
 };
 
 
 /*void PrintSortedStrings(SortedStrings& strings) {
   for (const string& s : strings.GetSortedStrings()) {
-    cout << s << " ";
+      cout << s << " ";
   }
   cout << endl;
 }

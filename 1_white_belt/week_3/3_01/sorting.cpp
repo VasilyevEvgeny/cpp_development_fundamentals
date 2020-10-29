@@ -1,7 +1,8 @@
+// https://www.coursera.org/learn/c-plus-plus-white/programming/D5IKE/sortirovka-tsielykh-chisiel-po-moduliu
+
 #include <iostream>
 #include <vector>
 #include <algorithm>
-#include <iomanip>
 
 using namespace std;
 

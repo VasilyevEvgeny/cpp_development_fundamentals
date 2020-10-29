@@ -1,4 +1,7 @@
+// https://www.coursera.org/learn/c-plus-plus-white/programming/pZwQ4/klass-rational
+
 #include <iostream>
+
 using namespace std;
 
 class Rational {

@@ -1,3 +1,5 @@
+// https://www.coursera.org/learn/c-plus-plus-white/programming/SqolV/faktorial
+
 //#include <iostream>
 
 //using namespace std;

@@ -1,3 +1,5 @@
+// https://www.coursera.org/learn/c-plus-plus-white/programming/ZajnT/otbor-palindromov
+
 /*#include <iostream>
 #include <string>
 #include <vector>

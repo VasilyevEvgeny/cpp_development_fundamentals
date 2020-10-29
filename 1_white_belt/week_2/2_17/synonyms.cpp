@@ -1,6 +1,7 @@
+// https://www.coursera.org/learn/c-plus-plus-white/programming/WRbZE/sinonimy
+
 #include <iostream>
 #include <set>
-#include <vector>
 #include <map>
 
 using namespace std;
@@ -34,8 +35,6 @@ int main() {
 			else
 				cout << "NO" << endl;
 		}
-
-
 	}
 
 	return 0;

@@ -1,3 +1,5 @@
+// https://www.coursera.org/learn/c-plus-plus-white/programming/NZTXy/rabota-s-failami
+
 #include <iostream>
 #include <fstream>
 #include <string>

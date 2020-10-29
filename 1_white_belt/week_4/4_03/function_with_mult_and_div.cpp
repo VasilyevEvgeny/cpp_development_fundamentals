@@ -1,7 +1,8 @@
+// https://www.coursera.org/learn/c-plus-plus-white/programming/oOkT1/obratimaia-funktsiia-s-umnozhieniiem-i-dielieniiem
+
 #include <iostream>
 #include <string>
 #include <vector>
-#include <algorithm>
 
 using namespace std;
 
@@ -80,24 +81,25 @@ private:
 
 /*Function MakeWeightFunction(const Params& params,
                             const Image& image) {
-  Function function;
-  function.AddPart('*', params.a);
-  function.AddPart('-', image.freshness * params.b);
-  function.AddPart('+', image.rating * params.c);
-  return function;
+    Function function;
+    function.AddPart('*', params.a);
+    function.AddPart('-', image.freshness * params.b);
+    function.AddPart('+', image.rating * params.c);
+
+    return function;
 }
 
 double ComputeImageWeight(const Params& params, const Image& image) {
-  Function function = MakeWeightFunction(params, image);
-  return function.Apply(image.quality);
+    Function function = MakeWeightFunction(params, image);
+
+    return function.Apply(image.quality);
 }
 
-double ComputeQualityByWeight(const Params& params,
-                              const Image& image,
-                              double weight) {
-  Function function = MakeWeightFunction(params, image);
-  function.Invert();
-  return function.Apply(weight);
+double ComputeQualityByWeight(const Params& params, const Image& image, double weight) {
+    Function function = MakeWeightFunction(params, image);
+    function.Invert();
+
+    return function.Apply(weight);
 }
 
 int main() {
@@ -105,6 +107,7 @@ int main() {
   Params params = {4, 2, 6};
   cout << ComputeImageWeight(params, image) << endl;
   cout << ComputeQualityByWeight(params, image, 52) << endl;
+
   return 0;
 }*/
 

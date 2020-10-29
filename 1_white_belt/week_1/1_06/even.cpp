@@ -1,3 +1,5 @@
+// https://www.coursera.org/learn/c-plus-plus-white/programming/SEB5v/chiotnyie-chisla
+
 #include <iostream>
 
 using namespace std;

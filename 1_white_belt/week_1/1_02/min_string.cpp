@@ -1,3 +1,5 @@
+// https://www.coursera.org/learn/c-plus-plus-white/programming/szG5X/minimal-naia-stroka
+
 #include <string>
 #include <iostream>
 

@@ -1,3 +1,5 @@
+// https://www.coursera.org/learn/c-plus-plus-white/programming/DULBh/mnozhiestvo-znachienii-slovaria
+
 #include <iostream>
 #include <map>
 #include <set>

@@ -1,3 +1,5 @@
+// https://www.coursera.org/learn/c-plus-plus-white/programming/YhvR9/naibol-shii-obshchii-dielitiel
+
 #include <iostream>
 
 using namespace std;

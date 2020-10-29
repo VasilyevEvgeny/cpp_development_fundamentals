@@ -1,10 +1,4 @@
-/*
- * main.cpp
- *
- *  Created on: Apr 25, 2018
- *      Author: evgeny
- */
-
+// https://www.coursera.org/learn/c-plus-plus-white/programming/F7WBk/avtobusnyie-ostanovki-3
 
 #include <iostream>
 #include <set>

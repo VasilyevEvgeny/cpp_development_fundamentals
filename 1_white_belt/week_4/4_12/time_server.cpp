@@ -1,6 +1,9 @@
+// https://www.coursera.org/learn/c-plus-plus-white/programming/NXqA9/rabota-s-siervierom-vriemieni
+
 #include <iostream>
 #include <exception>
 #include <string>
+
 using namespace std;
 
 /*string AskTimeServer() {
@@ -10,15 +13,9 @@ using namespace std;
 }*/
 
 class TimeServer {
+
 public:
     string GetCurrentTime() {
-        /* Реализуйте этот метод:
-            * если AskTimeServer() вернула значение, запишите его в LastFetchedTime и верните
-            * если AskTimeServer() бросила исключение system_error, верните текущее значение
-            поля LastFetchedTime
-            * если AskTimeServer() бросила другое исключение, пробросьте его дальше.
-        */
-
     	try {
     		LastFetchedTime = AskTimeServer();
     		return LastFetchedTime;
@@ -34,7 +31,6 @@ private:
 };
 
 /*int main() {
-    // Меняя реализацию функции AskTimeServer, убедитесь, что это код работает корректно
     TimeServer ts;
     try {
         cout << ts.GetCurrentTime() << endl;

@@ -1,3 +1,5 @@
+// https://www.coursera.org/learn/c-plus-plus-white/programming/7rcDW/kolichiestvo-unikal-nykh-strok
+
 #include <iostream>
 #include <set>
 

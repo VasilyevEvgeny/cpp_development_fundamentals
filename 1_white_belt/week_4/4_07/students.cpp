@@ -1,3 +1,5 @@
+// https://www.coursera.org/learn/c-plus-plus-white/programming/4X4vH/spisok-studientov
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -25,11 +27,6 @@ int main() {
 			students[i].Day_Of_Birth >> students[i].Month_Of_Birth >> students[i].Year_Of_Birth;
 	}
 
-	/*for (const auto& student : students) {
-		cout << student.First_Name << " " << student.Last_Name << " " <<
-				student.Day_Of_Birth << " " << 	student.Month_Of_Birth << " " << student.Year_Of_Birth << endl;
-	}*/
-
 	int M;
 	cin >> M;
 
@@ -46,7 +43,6 @@ int main() {
 		} else
 			cout << "bad request" <<endl;
 	}
-
 
 	return 0;
 }

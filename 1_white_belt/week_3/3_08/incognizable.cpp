@@ -1,3 +1,5 @@
+// https://www.coursera.org/learn/c-plus-plus-white/programming/ZehLm/sposoby-initsializatsii
+
 #include <iostream>
 #include <string>
 #include <vector>

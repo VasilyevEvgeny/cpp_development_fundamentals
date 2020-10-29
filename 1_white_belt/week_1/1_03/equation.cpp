@@ -1,3 +1,5 @@
+// https://www.coursera.org/learn/c-plus-plus-white/programming/jRy5s/uravnieniie
+
 #include <iostream>
 #include <cmath>
 
