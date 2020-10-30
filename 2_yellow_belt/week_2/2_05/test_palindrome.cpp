@@ -1,3 +1,5 @@
+// https://www.coursera.org/learn/c-plus-plus-yellow/programming/Jzr59/tiesty-dlia-funktsii-ispalindrom
+
 #include <iostream>
 #include <map>
 #include <set>
@@ -156,9 +158,6 @@ int main() {
   runner.RunTest(TestUnitString, "TestUnitString");
   runner.RunTest(TestStringWithDifferentSymbols, "TestStringWithDifferentSymbols");
   runner.RunTest(TestTypicalExamples, "TestTypicalExamples");
-
-
-
 
   return 0;
 }

@@ -1,10 +1,3 @@
-/*
- * rectangle.cpp
- *
- *  Created on: May 13, 2018
- *      Author: evgeny
- */
-
 class Rectangle {
 public:
     Rectangle(int width, int height) : width_(width), height_(height)

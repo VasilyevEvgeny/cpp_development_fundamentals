@@ -1,9 +1,4 @@
-/*
- * regions.cpp
- *
- *  Created on: May 2, 2018
- *      Author: evgeny
- */
+// https://www.coursera.org/learn/c-plus-plus-yellow/programming/9CX0j/baza-rieghionov
 
 #include <iostream>
 #include <vector>

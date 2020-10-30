@@ -1,9 +1,4 @@
-/*
- * main.cpp
- *
- *  Created on: May 13, 2018
- *      Author: evgeny
- */
+// https://www.coursera.org/learn/c-plus-plus-yellow/programming/LSMnD/chast-mnozhiestva
 
 #include <iostream>
 #include <set>

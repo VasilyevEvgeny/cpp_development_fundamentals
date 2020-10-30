@@ -1,9 +1,4 @@
-/*
- * phone_number.cpp
- *
- *  Created on: May 13, 2018
- *      Author: evgeny
- */
+// https://www.coursera.org/learn/c-plus-plus-yellow/programming/7FjGE/riealizovat-klass-obiavliennyi-v-zagholovochnom-failie
 
 #include "phone_number.h"
 #include <iostream>

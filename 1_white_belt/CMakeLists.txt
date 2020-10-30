@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
-project(white_belt)
+project(1_white_belt)
 
 set(CMAKE_CXX_STANDARD 14)
 

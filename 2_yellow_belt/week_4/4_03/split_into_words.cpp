@@ -1,3 +1,4 @@
+// https://www.coursera.org/learn/c-plus-plus-yellow/programming/PAhKJ/razbiieniie-na-slova
 
 #include <iostream>
 #include <string>
@@ -32,10 +33,10 @@ int main() {
 	vector<string> words = SplitIntoWords(s);
 	cout << words.size() << " ";
 	for (auto it = begin(words); it != end(words); ++it) {
-	if (it != begin(words)) {
-	  cout << "/";
-	}
-	cout << *it;
+        if (it != begin(words)) {
+          cout << "/";
+        }
+        cout << *it;
 	}
 	cout << endl;
 }

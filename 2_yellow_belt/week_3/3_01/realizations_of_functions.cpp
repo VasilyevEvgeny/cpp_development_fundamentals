@@ -1,9 +1,4 @@
-/*
- * realizations_of_functions.cpp
- *
- *  Created on: May 12, 2018
- *      Author: evgeny
- */
+// https://www.coursera.org/learn/c-plus-plus-yellow/programming/FYcIz/riealizovat-funktsii-obiavliennyie-v-zagholovochnom-failie
 
 #include "sum_reverse_sort.h"
 #include <algorithm>

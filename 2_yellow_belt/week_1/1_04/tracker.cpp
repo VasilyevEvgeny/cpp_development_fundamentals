@@ -1,10 +1,4 @@
-/*
- * tracker.cpp
- *
- *  Created on: May 3, 2018
- *      Author: evgeny
- */
-
+// https://www.coursera.org/learn/c-plus-plus-yellow/programming/f9Art/triekier-zadach
 
 #include <iostream>
 #include <vector>

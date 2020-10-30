@@ -1,14 +1,8 @@
-/*
- * blocks_mass.cpp
- *
- *  Created on: May 2, 2018
- *      Author: evgeny
- */
+// https://www.coursera.org/learn/c-plus-plus-yellow/programming/pg1Vd/massa-blokov
 
 #include <iostream>
 #include <vector>
 #include <limits>
-#include <string>
 
 using namespace std;
 

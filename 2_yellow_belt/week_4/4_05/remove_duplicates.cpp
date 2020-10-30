@@ -1,3 +1,5 @@
+// https://www.coursera.org/learn/c-plus-plus-yellow/programming/ymAlt/udalieniie-povtorov
+
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -11,12 +13,13 @@ void RemoveDuplicates(vector<T>& elements) {
 	elements.erase(last, elements.end());
 }
 
+/*
 int main() {
 	vector<int> v1 = {6, 4, 7, 6, 4, 4, 0, 1};
-	RemoveDuplicates(v1);
-	for (int x : v1) {
-	cout << x << " ";
-	}
+        RemoveDuplicates(v1);
+        for (int x : v1) {
+        cout << x << " ";
+        }
 	cout << endl;
 
 	vector<string> v2 = {"C", "C++", "C++", "C", "C++"};
@@ -27,3 +30,5 @@ int main() {
 	cout << endl;
 	return 0;
 }
+
+ */

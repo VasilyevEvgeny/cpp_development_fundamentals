@@ -1,9 +1,4 @@
-/*
- * part_of_vector.cpp
- *
- *  Created on: May 13, 2018
- *      Author: evgeny
- */
+// https://www.coursera.org/learn/c-plus-plus-yellow/programming/CzFMg/chast-viektora
 
 #include <iostream>
 #include <vector>

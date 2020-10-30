@@ -1,10 +1,4 @@
-/*
- * permutations.cpp
- *
- *  Created on: May 14, 2018
- *      Author: evgeny
- */
-
+// https://www.coursera.org/learn/c-plus-plus-yellow/programming/H4uPd/pieriebor-pieriestanovok
 
 #include <iostream>
 #include <algorithm>
@@ -31,8 +25,6 @@ int main() {
 	do {
 		PrintVector(v);
 	} while(prev_permutation(v.begin(), v.end()));
-
-
 
 	return 0;
 }

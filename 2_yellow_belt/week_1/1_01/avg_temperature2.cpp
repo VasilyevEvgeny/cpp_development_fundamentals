@@ -1,10 +1,4 @@
-/*
- * avg_temperature.cpp
- *
- *  Created on: May 2, 2018
- *      Author: evgeny
- */
-
+// https://www.coursera.org/learn/c-plus-plus-yellow/programming/7T2kJ/sriedniaia-tiempieratura-2
 
 #include <iostream>
 #include <vector>
@@ -27,8 +21,6 @@ void PrintDays(vector<size_t>& days) {
 }
 
 int main() {
-
-	//cout << numeric_limits<size_t>::max() << endl;
 
 	size_t N;
 	cin >> N;

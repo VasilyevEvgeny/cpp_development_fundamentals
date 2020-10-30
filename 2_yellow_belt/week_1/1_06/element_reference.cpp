@@ -1,9 +1,4 @@
-/*
- * element_reference.cpp
- *
- *  Created on: May 8, 2018
- *      Author: evgeny
- */
+// https://www.coursera.org/learn/c-plus-plus-yellow/programming/ju9bq/ssylka-na-eliemient
 
 #include <iostream>
 #include <map>

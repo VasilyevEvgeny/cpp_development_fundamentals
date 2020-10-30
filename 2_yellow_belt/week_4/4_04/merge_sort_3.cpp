@@ -1,10 +1,4 @@
-/*
- * merge_sort.cpp
- *
- *  Created on: May 14, 2018
- *      Author: evgeny
- */
-
+// https://www.coursera.org/learn/c-plus-plus-yellow/programming/wlbIg/sortirovka-sliianiiem
 
 #include <iostream>
 #include <algorithm>
@@ -46,6 +40,7 @@ void MergeSort(RandomIt range_begin, RandomIt range_end) {
 		*it = elements[it-range_begin];
 }
 
+/*
 int main() {
 	vector<int> v = {6, 4, 7, 6, 4, 4, 0, 1, 3};
 	MergeSort(begin(v), end(v));
@@ -56,3 +51,4 @@ int main() {
 
 	return 0;
 }
+*/

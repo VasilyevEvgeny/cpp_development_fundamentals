@@ -1,9 +1,10 @@
+// https://www.coursera.org/learn/c-plus-plus-yellow/programming/T53NU/tiesty-dlia-funktsii-getdistinctrealrootcount
+
 #include <iostream>
 #include <map>
 #include <set>
 #include <sstream>
 #include <stdexcept>
-#include <string>
 #include <vector>
 
 using namespace std;

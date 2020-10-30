@@ -16,7 +16,7 @@ using namespace std;
 
 // Предварительное объявление шаблонных функций
 
-/*template <typename T> T Sqr(T x);
+template <typename T> T Sqr(T x);
 template<typename T> vector<T> operator* (const vector<T>& v1, const vector<T>& v2);
 template<typename T1, typename T2> pair<T1,T2> operator* (const pair<T1,T2>& p1, const pair<T1,T2>& p2);
 template<typename T1, typename T2, typename T3> map<T1,pair<T2,T3>> operator* (const map<T1,pair<T2,T3>>& m1, const map<T1,pair<T2,T3>>& m2);
@@ -49,7 +49,7 @@ map<T1,pair<T2,T3>> operator* (const map<T1,pair<T2,T3>>& m1, const map<T1,pair<
 template <typename T>
 T Sqr(T x) {
 	return x * x;
-}*/
+}
 
 template<typename T> vector<T> Sqr(const vector<T>& v);
 template<typename T1, typename T2, typename T3> map<T1,pair<T2,T3>> Sqr(const map<T1,pair<T2,T3>>& m);
@@ -161,7 +161,7 @@ int main() {
 
 	map<string, pair<double, int>> map_of_pairs = {
 	  {"4", {2.0, 2}},
-	  {"7", {4.7, 3}}
+	  {"7", {4, 3}}
 	};
 	cout << "map of pairs:" << endl;
 	for (const auto& x : Sqr(map_of_pairs)) {
@@ -184,3 +184,4 @@ int main() {
 		cout << endl;
 	}
 }
+

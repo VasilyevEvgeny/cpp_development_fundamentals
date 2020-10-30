@@ -1,10 +1,4 @@
-/*
- * merge_sort.cpp
- *
- *  Created on: May 14, 2018
- *      Author: evgeny
- */
-
+// https://www.coursera.org/learn/c-plus-plus-yellow/programming/wlbIg/sortirovka-sliianiiem
 
 //#include <iostream>
 //#include <algorithm>
