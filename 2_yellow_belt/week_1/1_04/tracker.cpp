@@ -1,223 +1,204 @@
 // https://www.coursera.org/learn/c-plus-plus-yellow/programming/f9Art/triekier-zadach
 
 #include <iostream>
-#include <vector>
 #include <map>
-#include <algorithm>
+#include <string>
+#include <vector>
 
 using namespace std;
 
+template<class T> std::ostream& operator << (std::ostream& os, const std::vector<T>& v) {
+    os << "[";
+    for (typename std::vector<T>::const_iterator ii = v.begin(); ii != v.end(); ++ii) {
+        os << " " << *ii;
+    }
+    os << "]";
+    return os;
+}
+
+/*
+
 // Перечислимый тип для статуса задачи
-/*enum class TaskStatus {
-  NEW,          // новая
-  IN_PROGRESS,  // в разработке
-  TESTING,      // на тестировании
-  DONE          // завершена
+enum class TaskStatus {
+    NEW,          // новая
+    IN_PROGRESS,  // в разработке
+    TESTING,      // на тестировании
+    DONE          // завершена
 };
 
 // Объявляем тип-синоним для map<TaskStatus, int>,
 // позволяющего хранить количество задач каждого статуса
-using TasksInfo = map<TaskStatus, int>;*/
+using TasksInfo = map<TaskStatus, int>;
 
+std::ostream& operator<< (std::ostream &os, const TaskStatus& ts) {
+    if (ts == TaskStatus::NEW) { os << "NEW"; }
+    else if (ts == TaskStatus::IN_PROGRESS) { os << "IN_PROGRESS"; }
+    else if (ts == TaskStatus::TESTING) { os << "TESTING"; }
+    else { os << "DONE"; }
 
-
-void PrintTasksInfo(TasksInfo tasks_info) {
-  cout << tasks_info[TaskStatus::NEW] << " new tasks" <<
-      ", " << tasks_info[TaskStatus::IN_PROGRESS] << " tasks in progress" <<
-      ", " << tasks_info[TaskStatus::TESTING] << " tasks are being tested" <<
-      ", " << tasks_info[TaskStatus::DONE] << " tasks are done" << endl;
+    return os;
 }
 
-void update_status(TaskStatus& status) {
-	if (status == TaskStatus::NEW)
-		status = TaskStatus::IN_PROGRESS;
-	else if (status == TaskStatus::IN_PROGRESS)
-		status = TaskStatus::TESTING;
-	else if (status == TaskStatus::TESTING)
-		status = TaskStatus::DONE;
-	else if (status == TaskStatus::DONE)
-		status = TaskStatus::DONE;
+std::ostream& operator<< (std::ostream &os, const TasksInfo &m) {
+    for (auto& item : m) {
+        os << "{" << item.first << "->" << item.second << "} ";
+    }
+    os << std::endl;
+
+    return os;
 }
 
-class TeamTasks {
-public:
-	// Получить статистику по статусам задач конкретного разработчика
-	const TasksInfo& GetPersonTasksInfo(const string& person) {
-		return team[person];
-	}
-
-	// Добавить новую задачу (в статусе NEW) для конкретного разработчитка
-	void AddNewTask(const string& person) {
-		team[person][TaskStatus::NEW]++;
-		//team[person][TaskStatus::IN_PROGRESS] = 2;
-		//team[person][TaskStatus::TESTING] = 4;
-		//team[person][TaskStatus::DONE] = 1;
-	}
-
-	// Обновить статусы по данному количеству задач конкретного разработчика,
-	// подробности см. ниже
-	tuple<TasksInfo, TasksInfo> PerformPersonTasks(const string& person, int task_count) {
-		/*if (team[person][TaskStatus::NEW] == 5 &&
-			team[person][TaskStatus::IN_PROGRESS] == 0 &&
-			team[person][TaskStatus::TESTING] == 4 &&
-			team[person][TaskStatus::DONE] == 1
-		) {
-			TasksInfo updated = {{TaskStatus::IN_PROGRESS, 2}, {}};
-		TasksInfo untouched = {{TaskStatus::NEW, 3}, {TaskStatus::TESTING, 4}};
-
-		return tie(updated, untouched);
-		}*/
-			/*return make_tuple(
-					{TaskStatus::IN_PROGRESS : 2}, {});*/
-					//make_tuple({TaskStatus::IN_PROGRESS : 2},
-					//{TaskStatus::NEW : 3, TaskStatus::TESTING : 4});
-
-
-
-
-
-		TasksInfo team_updated, team_updated_cleared;
-		TasksInfo team_untouched, team_untouched_cleared;
-		int new_size_for_status = 0;
-		int old_size_for_status = 0;
-		int remainder = 0;
-		vector<TaskStatus> statuses = {TaskStatus::NEW, TaskStatus::IN_PROGRESS, TaskStatus::TESTING, TaskStatus::DONE};
-		//TaskStatus status = TaskStatus::NEW;
-		//while (task_count > 0) {
-		for (const auto& status : statuses){
-			if (remainder)
-				team_updated[status] = remainder;
-
-			old_size_for_status = team[person][status];
-			if (status != TaskStatus::DONE)
-				new_size_for_status = task_count >= old_size_for_status ? 0 : old_size_for_status - task_count;
-			else
-				new_size_for_status = old_size_for_status;
-
-			remainder = min(old_size_for_status, task_count);
-			task_count -= remainder;
-
-			team_untouched[status] = new_size_for_status;
-
-			team[person][status] = team_untouched[status] + team_updated[status];
-			team_untouched[TaskStatus::DONE] = 0;
-
-			if (team_untouched[status] != 0)
-				team_untouched_cleared[status] = team_untouched[status];
-			if (team_updated[status] != 0)
-				team_updated_cleared[status] = team_updated[status];
-
-			//update_status(status);
-		}
-
-		return make_tuple(team_updated_cleared, team_untouched_cleared);
-	}
-
-private:
-	map<string, TasksInfo> team;
-
-
-
-};
-
+*/
 
 // Принимаем словарь по значению, чтобы иметь возможность
 // обращаться к отсутствующим ключам с помощью [] и получать 0,
 // не меняя при этом исходный словарь
+void PrintTasksInfo(TasksInfo tasks_info) {
+    cout << tasks_info[TaskStatus::NEW] << " new tasks" <<
+         ", " << tasks_info[TaskStatus::IN_PROGRESS] << " tasks in progress" <<
+         ", " << tasks_info[TaskStatus::TESTING] << " tasks are being tested" <<
+         ", " << tasks_info[TaskStatus::DONE] << " tasks are done" << endl;
+}
 
+class TeamTasks {
+public:
+    // Получить статистику по статусам задач конкретного разработчика
+    const TasksInfo& GetPersonTasksInfo(const string& person) const {
+        return data.at(person);
+    }
 
-int main() {
-	TeamTasks tasks;
-	TasksInfo updated_tasks, untouched_tasks;
+    // Добавить новую задачу (в статусе NEW) для конкретного разработчитка
+    void AddNewTask(const string& person) {
+        data[person][TaskStatus::NEW]++;
+    }
 
-	for (int i = 0 ; i < 5; ++i)
-		tasks.AddNewTask("Alice");
-	//PrintTasksInfo(updated_tasks);
-	//PrintTasksInfo(untouched_tasks);
+    // Обновить статусы по данному количеству задач конкретного разработчика,
+    // подробности см. ниже
+    tuple<TasksInfo, TasksInfo> PerformPersonTasks(const string& person, int task_count) {
+        if (data.find(person) == data.end()) {
+            return {};
+        }
 
-	cout << "=====" << endl;
+        if (verbose) {
+            cout << "-------------> PerformPersonTasks!" << endl;
+        }
 
-	tie(updated_tasks, untouched_tasks) = tasks.PerformPersonTasks("Alice", 5);
-	PrintTasksInfo(updated_tasks);
-	PrintTasksInfo(untouched_tasks);
+        TasksInfo updated, untouched(data.at(person));
+        vector<TaskStatus> statuses = {TaskStatus::NEW, TaskStatus::IN_PROGRESS, TaskStatus::TESTING, TaskStatus::DONE};
 
-	cout << "=====" << endl;
+        vector<int> ns(n_statuses);
+        for (size_t i = 0; i < n_statuses; ++i) {
+            ns[i] = data.at(person)[statuses[i]];
+        }
 
-	tie(updated_tasks, untouched_tasks) = tasks.PerformPersonTasks("Alice", 5);
-	PrintTasksInfo(updated_tasks);
-	PrintTasksInfo(untouched_tasks);
+        for (size_t i = 0; i < n_statuses - 1; ++i) {
+            auto cur_status = statuses[i];
+            auto nxt_status = statuses[i + 1];
 
-	cout << "=====" << endl;
+            if (verbose) {
+                cout << "===================================" << endl;
+                cout << "cur_status: " << i << ", nxt status = " << i + 1 << endl;
+            }
 
-	tie(updated_tasks, untouched_tasks) = tasks.PerformPersonTasks("Alice", 1);
-	PrintTasksInfo(updated_tasks);
-	PrintTasksInfo(untouched_tasks);
+            while (ns[i] && task_count) {
 
-	cout << "=====" << endl;
+                // cur_status
+                data.at(person).at(cur_status)--;
+                untouched.at(cur_status)--;
 
-	for (int i = 0 ; i < 5; ++i)
-		tasks.AddNewTask("Alice");
+                // nxt_status
+                data.at(person)[nxt_status]++;
+                updated[nxt_status]++;
 
-	cout << "=====" << endl;
+                // upd cnt
+                ns[i]--;
+                task_count--;
+            }
 
+            if (verbose) {
+                cout << "ns[i] = " << ns[i] << endl;
+                cout << "task_count = " << task_count << endl;
+                cout << "data = "; PrintTasksInfo(data.at(person));
+                cout << "untouched = "; PrintTasksInfo(untouched);
+                cout << "updated = "; PrintTasksInfo(updated);
+            }
 
-	cout << "TASKS_INFO: ";
-	PrintTasksInfo(tasks.GetPersonTasksInfo("Alice"));
+        }
 
+        auto upd_data = data.at(person);
+        for (auto item : upd_data) {
+            if (!item.second) {
+                data.at(person).erase(item.first);
+            }
+        }
 
-	cout << "=====" << endl;
+        /*
+        if (verbose) {
+            cout << data.at(person) << std::endl;
+        }
+         */
 
-	tie(updated_tasks, untouched_tasks) = tasks.PerformPersonTasks("Alice", 2);
-	PrintTasksInfo(updated_tasks);
-	PrintTasksInfo(untouched_tasks);
+        return {updated, untouched};
+    }
 
-	cout << "=====" << endl;
-
-	//tasks.GetPersonTasksInfo("Alice");
-	cout << "TASKS_INFO: ";
-	PrintTasksInfo(tasks.GetPersonTasksInfo("Alice"));
-
-	cout << "=====" << endl;
-
-	tie(updated_tasks, untouched_tasks) = tasks.PerformPersonTasks("Alice", 4);
-	PrintTasksInfo(updated_tasks);
-	PrintTasksInfo(untouched_tasks);
-
-	cout << "=====" << endl;
-
-	cout << "TASKS_INFO: ";
-	PrintTasksInfo(tasks.GetPersonTasksInfo("Alice"));
-
-
+private:
+    map<string, TasksInfo> data;
+    const size_t n_statuses = 4;
+    const bool verbose = false;
+};
 
 /*
-	TeamTasks tasks;
-  tasks.AddNewTask("Ilia");
-  for (int i = 0; i < 3; ++i) {
-    tasks.AddNewTask("Ivan");
-  }
-  cout << "Ilia's tasks: ";
-  PrintTasksInfo(tasks.GetPersonTasksInfo("Ilia"));
-  cout << "Ivan's tasks: ";
-  PrintTasksInfo(tasks.GetPersonTasksInfo("Ivan"));
 
-  TasksInfo updated_tasks, untouched_tasks;
+int main() {
 
-  tie(updated_tasks, untouched_tasks) =
-      tasks.PerformPersonTasks("Ivan", 2);
-  //cout << "Ivan's tasks final: ";
-  //PrintTasksInfo(tasks.GetPersonTasksInfo("Ivan"));
-  cout << "Updated Ivan's tasks: ";
-  PrintTasksInfo(updated_tasks);
-  cout << "Untouched Ivan's tasks: ";
-  PrintTasksInfo(untouched_tasks);
+/////////////  1
+//    TeamTasks tasks;
+//    tasks.AddNewTask("Ilia");
+//    for (int i = 0; i < 3; ++i) {
+//        tasks.AddNewTask("Ivan");
+//    }
+//    cout << "Ilia's tasks: ";
+//    PrintTasksInfo(tasks.GetPersonTasksInfo("Ilia"));
+//    cout << "Ivan's tasks: ";
+//    PrintTasksInfo(tasks.GetPersonTasksInfo("Ivan"));
+//
+//    TasksInfo updated_tasks, untouched_tasks;
+//
+//    tie(updated_tasks, untouched_tasks) =
+//            tasks.PerformPersonTasks("Ivan", 2);
+//    cout << "Updated Ivan's tasks: ";
+//    PrintTasksInfo(updated_tasks);
+//    cout << "Untouched Ivan's tasks: ";
+//    PrintTasksInfo(untouched_tasks);
+//
+//    tie(updated_tasks, untouched_tasks) =
+//            tasks.PerformPersonTasks("Ivan", 2);
+//    cout << "Updated Ivan's tasks: ";
+//    PrintTasksInfo(updated_tasks);
+//    cout << "Untouched Ivan's tasks: ";
+//    PrintTasksInfo(untouched_tasks);
 
-  tie(updated_tasks, untouched_tasks) =
-      tasks.PerformPersonTasks("Ivan", 2);
-  cout << "Updated Ivan's tasks: ";
-  PrintTasksInfo(updated_tasks);
-  cout << "Untouched Ivan's tasks: ";
-  PrintTasksInfo(untouched_tasks);
-*/
-  return 0;
+
+
+/////////////  2
+    TeamTasks tasks;
+    for (int i = 0; i < 5; ++i) {
+        tasks.AddNewTask("Alice");
+    }
+    tasks.PerformPersonTasks("Alice", 5);
+    tasks.PerformPersonTasks("Alice", 5);
+    tasks.PerformPersonTasks("Alice", 1);
+    PrintTasksInfo(tasks.GetPersonTasksInfo("Alice"));
+    for (int i = 0; i < 5; ++i) {
+        tasks.AddNewTask("Alice");
+    }
+    tasks.PerformPersonTasks("Alice", 2);
+    PrintTasksInfo(tasks.GetPersonTasksInfo("Alice"));
+    tasks.PerformPersonTasks("Alice", 4);
+    PrintTasksInfo(tasks.GetPersonTasksInfo("Alice"));
+
+
+    return 0;
 }
+
+ */
