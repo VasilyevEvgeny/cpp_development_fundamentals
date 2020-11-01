@@ -11,7 +11,7 @@ add_executable(1_01 week_1/1_01/avg_temperature2.cpp)
 add_executable(1_02 week_1/1_02/blocks_mass.cpp)
 add_executable(1_03 week_1/1_03/regions.cpp)
 add_executable(1_04 week_1/1_04/tracker.cpp)
-# !!!!!!!!!! add_executable(1_05 week_1/1_05/sqr_all.cpp)
+add_executable(1_05 week_1/1_05/sqr_all.cpp)
 add_executable(1_06 week_1/1_06/element_reference.cpp)
 
 ##################

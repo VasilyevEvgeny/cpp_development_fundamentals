@@ -17,7 +17,6 @@ template<class T> std::ostream& operator << (std::ostream& os, const std::vector
 }
 
 /*
-
 // Перечислимый тип для статуса задачи
 enum class TaskStatus {
     NEW,          // новая
@@ -29,6 +28,7 @@ enum class TaskStatus {
 // Объявляем тип-синоним для map<TaskStatus, int>,
 // позволяющего хранить количество задач каждого статуса
 using TasksInfo = map<TaskStatus, int>;
+*/
 
 std::ostream& operator<< (std::ostream &os, const TaskStatus& ts) {
     if (ts == TaskStatus::NEW) { os << "NEW"; }
@@ -43,12 +43,11 @@ std::ostream& operator<< (std::ostream &os, const TasksInfo &m) {
     for (auto& item : m) {
         os << "{" << item.first << "->" << item.second << "} ";
     }
-    os << std::endl;
 
     return os;
 }
 
-*/
+
 
 // Принимаем словарь по значению, чтобы иметь возможность
 // обращаться к отсутствующим ключам с помощью [] и получать 0,
@@ -125,18 +124,18 @@ public:
 
         }
 
-        auto upd_data = data.at(person);
-        for (auto item : upd_data) {
-            if (!item.second) {
-                data.at(person).erase(item.first);
-            }
-        }
+        untouched.erase(TaskStatus::DONE);
 
-        /*
+        clear_task_info(data.at(person));
+        clear_task_info(updated);
+        clear_task_info(untouched);
+
         if (verbose) {
-            cout << data.at(person) << std::endl;
+            cout << "=================" << endl;
+            cout << "data: " << data.at(person) << endl;
+            cout << "updated: " << updated << endl;
+            cout << "untouched: " << untouched << endl;
         }
-         */
 
         return {updated, untouched};
     }
@@ -145,10 +144,19 @@ private:
     map<string, TasksInfo> data;
     const size_t n_statuses = 4;
     const bool verbose = false;
+
+    static void clear_task_info(TasksInfo& ti) {
+        auto copy_ti(ti);
+        for (auto item : copy_ti) {
+            if (!item.second) {
+                ti.erase(item.first);
+            }
+        }
+    }
 };
 
-/*
 
+/*
 int main() {
 
 /////////////  1
@@ -201,4 +209,4 @@ int main() {
     return 0;
 }
 
- */
+*/
