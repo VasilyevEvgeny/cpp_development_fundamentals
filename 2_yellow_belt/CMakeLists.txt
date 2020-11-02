@@ -31,7 +31,15 @@ add_executable(2_05 week_2/2_05/test_palindrome.cpp)
 add_executable(3_01 week_3/3_01/realizations_of_functions.cpp week_3/3_01/sum_reverse_sort.h)
 add_executable(3_02 week_3/3_02/phone_number.cpp week_3/3_02/phone_number.h)
 add_executable(3_03 week_3/3_03/rectangle.cpp week_3/3_03/rectangle.h)
-# !!!!!!!!!!! add_executable(3_04 week_3/3_04/rectangle.cpp week_3/3_03/rectangle.h)
+add_executable(3_04
+        week_3/3_04/main.cpp
+        week_3/3_04/responses.h
+        week_3/3_04/responses.cpp
+        week_3/3_04/query.h
+        week_3/3_04/query.cpp
+        week_3/3_04/bus_manager.h
+        week_3/3_04/bus_manager.cpp
+        )
 
 ##################
 ##### week 4 #####
