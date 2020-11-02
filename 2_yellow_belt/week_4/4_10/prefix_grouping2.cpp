@@ -1,10 +1,4 @@
-/*
- * prefix_grouping2.cpp
- *
- *  Created on: May 18, 2018
- *      Author: evgeny
- */
-
+// https://www.coursera.org/learn/c-plus-plus-yellow/programming/AhGVS/gruppirovka-strok-po-priefiksu
 
 #include <iostream>
 #include <vector>

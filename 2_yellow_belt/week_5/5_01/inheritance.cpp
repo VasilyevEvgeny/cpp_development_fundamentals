@@ -1,10 +1,4 @@
-/*
- * inheritance.cpp
- *
- *  Created on: May 23, 2018
- *      Author: evgeny
- */
-
+// https://www.coursera.org/learn/c-plus-plus-yellow/programming/zhahv/nasliedovaniie-svoimi-rukami
 
 #include <iostream>
 

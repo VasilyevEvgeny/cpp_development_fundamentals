@@ -1,9 +1,4 @@
-/*
- * arithmetic2.cpp
- *
- *  Created on: May 22, 2018
- *      Author: evgeny
- */
+// https://www.coursera.org/learn/c-plus-plus-yellow/programming/SwfxR/postroieniie-arifmietichieskogho-vyrazhieniia
 
 #include <iostream>
 #include <deque>

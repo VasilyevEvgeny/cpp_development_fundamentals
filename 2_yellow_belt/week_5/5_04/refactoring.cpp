@@ -1,9 +1,4 @@
-/*
- * refactoring.cpp
- *
- *  Created on: May 23, 2018
- *      Author: evgeny
- */
+// https://www.coursera.org/learn/c-plus-plus-yellow/peer/k9eZi/gramotno-riefaktorim-kod
 
 #include <iostream>
 #include <string>

@@ -48,9 +48,23 @@ add_executable(3_04
 add_executable(4_01 week_4/4_01/part_of_vector.cpp)
 add_executable(4_02 week_4/4_02/part_of_set.cpp)
 add_executable(4_03 week_4/4_03/split_into_words.cpp)
-add_executable(4_04_1 week_4/4_04/merge_sort_2.cpp)
-add_executable(4_04_2 week_4/4_04/merge_sort_3.cpp)
-add_executable(4_05 week_4/4_05/remove_duplicates.cpp)
-add_executable(4_06 week_4/4_06/permutations.cpp)
-add_executable(4_07 week_4/4_07/demography.cpp)
-# !!!! add_executable(4_08 week_4/4_08/demography.cpp)
+add_executable(4_04 week_4/4_04/remove_duplicates.cpp)
+add_executable(4_05 week_4/4_05/permutations.cpp)
+add_executable(4_06 week_4/4_06/demography.cpp)
+add_executable(4_07_1 week_4/4_07/merge_sort_2.cpp)
+add_executable(4_07_2 week_4/4_07/merge_sort_3.cpp)
+add_executable(4_08 week_4/4_08/find_nearest.cpp)
+add_executable(4_09 week_4/4_09/names_and_sirnames.cpp)
+add_executable(4_10_1 week_4/4_10/prefix_grouping1.cpp)
+add_executable(4_10_2 week_4/4_10/prefix_grouping2.cpp)
+add_executable(4_11_1 week_4/4_11/arithmetic1.cpp)
+add_executable(4_11_2 week_4/4_11/arithmetic2.cpp)
+
+##################
+##### week 5 #####
+##################
+
+add_executable(5_01 week_5/5_01/inheritance.cpp)
+add_executable(5_02 week_5/5_02/sms_and_email.cpp)
+add_executable(5_03 week_5/5_03/figures.cpp)
+add_executable(5_04 week_5/5_04/refactoring.cpp)

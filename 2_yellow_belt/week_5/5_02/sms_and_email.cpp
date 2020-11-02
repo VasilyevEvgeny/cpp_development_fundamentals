@@ -1,9 +1,4 @@
-/*
- * sms_and_email.cpp
- *
- *  Created on: May 23, 2018
- *      Author: evgeny
- */
+// https://www.coursera.org/learn/c-plus-plus-yellow/programming/I3Sle/otpravka-uviedomlienii
 
 #include <iostream>
 #include <string>
