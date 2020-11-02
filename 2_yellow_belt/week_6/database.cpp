@@ -1,34 +1,59 @@
 #include "database.h"
+
+#include <iostream>
 #include <algorithm>
 #include <stdexcept>
-#include <tuple>
+
 using namespace std;
 
 void Database::Add(const Date& date, const string& event) {
-  data_[date].Add(event);
+    if (!unordered_storage[date].count(event)) {
+        storage.insert({ date, event });
+        unordered_storage[date].insert(event);
+    }
+}
+
+vector<Event> Database::FindIf(const Predicate& p) const {
+	vector<Event> res;
+
+	for (const auto& item : storage) {
+		if (p(item.date, item.event)) {
+			res.push_back(item);
+		}
+	}
+
+	return res;
+}
+
+Event Database::Last(const Date& date) const {
+    const auto it = storage.upper_bound(date);
+
+    if (it == begin(storage)) {
+        throw invalid_argument("No entries");
+    }
+
+    return *prev(it);
+}
+
+int Database::RemoveIf(const Predicate& p) {
+	int count { 0 };
+
+	for (auto it = begin(storage); it != end(storage);) {
+		if (p(it->date, it->event)) {
+		    unordered_storage[it->date].erase(it->event);
+		    it = storage.erase(it);
+			++count;
+		}
+		else {
+			++it;
+		}
+	}
+
+	return count;
 }
 
 void Database::Print(ostream& os) const {
-  for (const auto& kv : data_) {
-    for (const auto& event : kv.second.GetAll()) {
-      os << kv.first << ' ' << event << endl;
-    }
-  }
-}
-
-Entry Database::Last(const Date& date) const {
-  auto it = data_.upper_bound(date);
-  if (it == data_.begin()) {
-    throw invalid_argument("");
-  }
-  --it;
-  return {it->first, it->second.GetAll().back()};
-}
-
-ostream& operator << (ostream& os, const Entry& e) {
-  return os << e.date << " " << e.event;
-}
-
-bool operator == (const Entry& lhs, const Entry& rhs) {
-  return tie(lhs.date, lhs.event) == tie(rhs.date, rhs.event);
+	for (const auto& item : storage) {
+		os << item << endl;
+	}
 }

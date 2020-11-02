@@ -68,3 +68,24 @@ add_executable(5_01 week_5/5_01/inheritance.cpp)
 add_executable(5_02 week_5/5_02/sms_and_email.cpp)
 add_executable(5_03 week_5/5_03/figures.cpp)
 add_executable(5_04 week_5/5_04/refactoring.cpp)
+
+##################
+##### week 6 #####
+##################
+
+add_executable(6_01
+        week_6/condition_parser.h
+        week_6/condition_parser.cpp
+        week_6/database.h
+        week_6/database.cpp
+        week_6/date.h
+        week_6/date.cpp
+        week_6/event.h
+        week_6/event.cpp
+        week_6/node.h
+        week_6/node.cpp
+        week_6/token.h
+        week_6/token.cpp
+        week_6/main.cpp
+
+        )

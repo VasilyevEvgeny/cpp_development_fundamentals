@@ -1,63 +1,78 @@
 #include "node.h"
 
+#include <stdexcept>
+
+using namespace std;
+
 bool EmptyNode::Evaluate(const Date& date, const string& event) const {
-  return true;
+	return true;
 }
 
-template <typename T>
-bool CompareTo(const T& lhs, const T& rhs, Comparison cmp) {
-  switch (cmp) {
-  case Comparison::Less:
-    return lhs < rhs;
-  case Comparison::LessOrEqual:
-    return lhs <= rhs;
-  case Comparison::Equal:
-    return lhs == rhs;
-  case Comparison::NotEqual:
-    return lhs != rhs;
-  case Comparison::Greater:
-    return lhs > rhs;
-  case Comparison::GreaterOrEqual:
-    return lhs >= rhs;
-  }
-  return false; // make compiler happy
-}
-
-DateComparisonNode::DateComparisonNode(Comparison comparison, const Date& value)
-  : comparison_(comparison)
-  , value_(value)
-{
-}
-
-bool DateComparisonNode::Evaluate(const Date& date, const string&) const {
-  return CompareTo(date, value_, comparison_);
-}
-
-EventComparisonNode::EventComparisonNode(Comparison comparison, const string& value)
-  : comparison_(comparison)
-  , value_(value)
-{
-}
-
-bool EventComparisonNode::Evaluate(const Date&, const string& event) const {
-  return CompareTo(event, value_, comparison_);
-}
-
-LogicalOperationNode::LogicalOperationNode(
-    LogicalOperation operation, shared_ptr<Node> left, shared_ptr<Node> right
-)
-  : operation_(operation)
-  , left_(left)
-  , right_(right)
-{
-}
+LogicalOperationNode::LogicalOperationNode(LogicalOperation o, shared_ptr<Node> lhs, shared_ptr<Node> rhs)
+	: op(o)
+	, left(move(lhs))
+	, right(move(rhs))
+{}
 
 bool LogicalOperationNode::Evaluate(const Date& date, const string& event) const {
-  switch (operation_) {
-  case LogicalOperation::And:
-    return left_->Evaluate(date, event) && right_->Evaluate(date, event);
-  case LogicalOperation::Or:
-    return left_->Evaluate(date, event) || right_->Evaluate(date, event);
-  }
-  return false; // make compiler happy
+	switch (op) {
+	case LogicalOperation::Or:
+		return left->Evaluate(date, event) || right->Evaluate(date, event);
+	case LogicalOperation::And:
+		return left->Evaluate(date, event) && right->Evaluate(date, event);
+	default:
+		throw logic_error("Unsupported logical operation");
+	}
+}
+
+template<typename T>
+ComparisonNode<T>::ComparisonNode(Comparison c, T v)
+	: cmp(c)
+	, value(move(v))
+{}
+
+DateComparisonNode::DateComparisonNode(Comparison c, Date v)
+	: ComparisonNode<Date>(c, v)
+{}
+
+bool DateComparisonNode::Evaluate(const Date& date, const string& event) const {
+	switch (cmp) {
+	case Comparison::Less:
+		return date < value;
+	case Comparison::LessOrEqual:
+			return date <= value;
+	case Comparison::Greater:
+			return date > value;
+	case Comparison::GreaterOrEqual:
+			return date >= value;
+	case Comparison::Equal:
+			return date == value;
+	case Comparison::NotEqual:
+			return date != value;
+	default:
+		throw logic_error("Unsupported date comparison type");
+	}
+}
+
+EventComparisonNode::EventComparisonNode(Comparison c, string v)
+	: ComparisonNode(c, move(v))
+{}
+
+bool EventComparisonNode::Evaluate(const Date& date, const string& event) const {
+	switch (cmp) {
+	case Comparison::Less:
+	        return event < value;
+	    case Comparison::LessOrEqual:
+	            return event <= value;
+	    case Comparison::Greater:
+	            return event > value;
+	    case Comparison::GreaterOrEqual:
+	            return event >= value;
+	    case Comparison::Equal:
+	            return event == value;
+	    case Comparison::NotEqual:
+	            return event != value;
+	default:
+		throw logic_error("Unsupported event comparison type");
+	}
 }
