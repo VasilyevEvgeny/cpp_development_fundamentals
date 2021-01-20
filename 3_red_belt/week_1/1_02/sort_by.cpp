@@ -1,3 +1,5 @@
+// https://www.coursera.org/learn/c-plus-plus-red/programming/pLm4e/gienierator-komparatorov
+
 #include "airline_ticket.h"
 #include "test_runner.h"
 
