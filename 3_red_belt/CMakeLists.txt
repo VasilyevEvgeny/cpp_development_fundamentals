@@ -13,3 +13,4 @@ add_executable(1_03 week_1/1_03/update_field.cpp week_1/1_03/airline_ticket.h we
 add_executable(1_04 week_1/1_04/bad_macros.cpp week_1/1_04/test_runner.h)
 add_executable(1_05 week_1/1_05/uniq_id.cpp)
 add_executable(1_06 week_1/1_06/table.cpp week_1/1_06/test_runner.h)
+add_executable(1_07 week_1/1_07/deque.cpp)
