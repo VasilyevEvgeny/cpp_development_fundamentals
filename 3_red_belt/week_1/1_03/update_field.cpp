@@ -1,11 +1,62 @@
 // https://www.coursera.org/learn/c-plus-plus-red/programming/eEYfC/makros-update-field
 
+#include <tuple>
+
 #include "airline_ticket.h"
 #include "test_runner.h"
 
 using namespace std;
 
-#define UPDATE_FIELD(ticket, field, values)  // Реализуйте этот макрос, а также необходимые операторы для классов Date и Time
+
+std::ostream& operator << (std::ostream& os, const Date date) {
+    os << date.year << "-" << date.month << "-" << date.day;
+
+    return os;
+}
+
+std::ostream& operator << (std::ostream& os, const Time& time) {
+    os << time.hours << ":" << time.minutes;
+
+    return os;
+}
+
+std::istream& operator >> (std::istream& is, Date& date) {
+    is >> date.year;
+    is.ignore(1);
+    is >> date.month;
+    is.ignore(1);
+    is >> date.day;
+
+    return is;
+}
+
+std::istream& operator >> (std::istream& is, Time& time) {
+    is >> time.hours;
+    is.ignore(1);
+    is >> time.minutes;
+
+    return is;
+}
+
+bool operator == (const Date& lhs, const Date& rhs) {
+    return tie(lhs.year, lhs.month, lhs.day) == tie(rhs.year, rhs.month, rhs.day);
+}
+
+bool operator == (const Time& lhs, const Time& rhs) {
+    return tie(lhs.hours, lhs.minutes) == tie(rhs.hours, rhs.minutes);
+}
+
+
+// Реализуйте этот макрос, а также необходимые операторы для классов Date и Time
+#define UPDATE_FIELD(ticket, field, values)   \
+ {                                            \
+   auto it = values.find(#field);             \
+   if (it != values.end()) {                  \
+      istringstream is(it->second);           \
+      is >> ticket.field;                     \
+   }                                          \
+ }
+
 
 void TestUpdate() {
   AirlineTicket t;
