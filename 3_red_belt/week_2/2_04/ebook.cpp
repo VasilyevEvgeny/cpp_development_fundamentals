@@ -1,3 +1,5 @@
+// https://www.coursera.org/learn/c-plus-plus-red/programming/e72ST/eliektronnaia-knigha
+
 #include <iomanip>
 #include <iostream>
 #include <vector>

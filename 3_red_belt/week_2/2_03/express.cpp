@@ -1,3 +1,5 @@
+// https://www.coursera.org/learn/c-plus-plus-red/programming/NAS7D/ekspriessy
+
 #include <algorithm>
 #include <cmath>
 #include <iostream>
