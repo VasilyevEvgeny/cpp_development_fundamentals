@@ -31,3 +31,6 @@ add_executable(2_05 week_2/2_05/hotels.cpp)
 ##################
 
 add_executable(3_01 week_3/3_01/pool.cpp week_3/3_01/test_runner.h)
+add_executable(3_02 week_3/3_02/swap_sort_copy.cpp week_3/3_02/test_runner.h)
+add_executable(3_03 week_3/3_03/simple_vector.cpp week_3/3_03/simple_vector.h week_3/3_03/test_runner.h)
+add_executable(3_04 week_3/3_04/linked_list.cpp week_3/3_03/test_runner.h)
