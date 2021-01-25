@@ -25,3 +25,9 @@ add_executable(2_02 week_2/2_02/learner.cpp)
 add_executable(2_03 week_2/2_03/express.cpp)
 add_executable(2_04 week_2/2_04/ebook.cpp)
 add_executable(2_05 week_2/2_05/hotels.cpp)
+
+##################
+##### week 3 #####
+##################
+
+add_executable(3_01 week_3/3_01/pool.cpp week_3/3_01/test_runner.h)
