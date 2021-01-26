@@ -37,28 +37,21 @@ public:
     if (!node) {
       return PopFront();
     }
-    else if (!node->next) {
+
+    if (!node->next) {
       return;
     }
-    else {
-      Node* tmp = node->next->next;
-      delete node->next;
-      node->next = tmp;
-    }
+
+    Node* tmp = node->next;
+    node->next = tmp->next;
+    delete tmp;
   }
 
   void PopFront() {
-    if (!head_) {
-      return;
-    }
-    else if (head_->next) {
-      Node* tmp = new Node(head_->next->value, head_->next->next);
-      delete head_;
-      head_ = tmp;
-    }
-    else {
-      delete head_;
-      head_ = nullptr;
+    if (head_) {
+      Node* tmp = head_;
+      head_ = tmp->next;
+      delete tmp;
     }
   }
 
