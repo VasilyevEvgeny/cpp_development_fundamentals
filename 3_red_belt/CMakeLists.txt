@@ -34,3 +34,9 @@ add_executable(3_01 week_3/3_01/pool.cpp week_3/3_01/test_runner.h)
 add_executable(3_02 week_3/3_02/swap_sort_copy.cpp week_3/3_02/test_runner.h)
 add_executable(3_03 week_3/3_03/simple_vector.cpp week_3/3_03/simple_vector.h week_3/3_03/test_runner.h)
 add_executable(3_04 week_3/3_04/linked_list.cpp week_3/3_03/test_runner.h)
+
+##################
+##### week 4 #####
+##################
+
+add_executable(4_01 week_4/4_01/sportsmen.cpp)
