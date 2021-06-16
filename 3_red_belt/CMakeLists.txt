@@ -40,3 +40,15 @@ add_executable(3_04 week_3/3_04/linked_list.cpp week_3/3_03/test_runner.h)
 ##################
 
 add_executable(4_01 week_4/4_01/sportsmen.cpp)
+add_executable(4_02 week_4/4_02/stack_vector.cpp week_4/4_02/stack_vector.h week_4/4_02/profile.h week_4/4_02/test_runner.h)
+add_executable(4_03 week_4/4_03/translator.cpp week_4/4_03/profile.h week_4/4_03/test_runner.h)
+
+add_executable(4_04 week_4/4_04/airport_counter.cpp week_4/4_03/profile.h week_4/4_03/test_runner.h)
+set_property(TARGET 4_04 PROPERTY CXX_STANDARD 17)
+
+add_executable(4_05 week_4/4_05/text_editor.cpp week_4/4_05/profile.h week_4/4_05/test_runner.h)
+set_property(TARGET 4_05 PROPERTY CXX_STANDARD 17)
+
+add_executable(4_06 week_4/4_06/server_stats.cpp week_4/4_06/stats.cpp week_4/4_06/stats.h
+        week_4/4_06/http_request.h week_4/4_06/profile.h week_4/4_06/test_runner.h)
+set_property(TARGET 4_06 PROPERTY CXX_STANDARD 17)
