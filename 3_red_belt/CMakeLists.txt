@@ -52,3 +52,21 @@ set_property(TARGET 4_05 PROPERTY CXX_STANDARD 17)
 add_executable(4_06 week_4/4_06/server_stats.cpp week_4/4_06/stats.cpp week_4/4_06/stats.h
         week_4/4_06/http_request.h week_4/4_06/profile.h week_4/4_06/test_runner.h)
 set_property(TARGET 4_06 PROPERTY CXX_STANDARD 17)
+
+##################
+##### week 5 #####
+##################
+
+add_executable(5_01 week_5/5_01/josephs_permutation.cpp)
+
+add_executable(5_02 week_5/5_02/ground_heavy_strings.cpp)
+
+add_executable(5_03 week_5/5_03/simple_vector_copy_assignment.cpp)
+
+add_executable(5_04 week_5/5_04/split_into_sentences.cpp)
+
+add_executable(5_05 week_5/5_05/simple_vector_2.cpp)
+
+add_executable(5_06 week_5/5_06/merge_sort_3.cpp)
+
+add_executable(5_07 week_5/5_07/priority_collection_2.cpp)
