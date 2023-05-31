@@ -70,3 +70,9 @@ add_executable(5_05 week_5/5_05/simple_vector_2.cpp)
 add_executable(5_06 week_5/5_06/merge_sort_3.cpp)
 
 add_executable(5_07 week_5/5_07/priority_collection_2.cpp)
+
+add_executable(5_08 week_5/5_08/matrix_sum_1.cpp)
+
+add_executable(5_09 week_5/5_09/explore_key_words.cpp)
+
+add_executable(5_10 week_5/5_10/synchronized.cpp)
