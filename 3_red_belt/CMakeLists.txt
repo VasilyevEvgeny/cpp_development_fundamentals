@@ -76,3 +76,23 @@ add_executable(5_08 week_5/5_08/matrix_sum_1.cpp)
 add_executable(5_09 week_5/5_09/explore_key_words.cpp)
 
 add_executable(5_10 week_5/5_10/synchronized.cpp)
+
+add_executable(5_11 week_5/5_11/concurrent_map.cpp)
+
+
+##################
+##### week 6 #####
+##################
+
+add_executable(6_01
+        week_6/6_01/main.cpp
+        week_6/6_01/parse.cpp
+        week_6/6_01/profile.cpp
+        week_6/6_01/search_server.cpp
+)
+
+add_executable(6_02
+        week_6/6_02/main.cpp
+        week_6/6_02/parse.cpp
+        week_6/6_02/search_server.cpp
+)
