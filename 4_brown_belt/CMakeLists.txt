@@ -27,3 +27,5 @@ add_executable(2_06 week_2/2_06/collide.cpp week_2/2_06/geo2d.cpp)
 add_executable(2_07 week_2/2_07/comment_server.cpp)
 
 
+
+
