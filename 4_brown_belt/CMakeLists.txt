@@ -33,6 +33,10 @@ add_executable(2_07 week_2/2_07/comment_server.cpp)
 
 add_executable(3_01 week_3/3_01/print_stats_2.cpp)
 add_executable(3_02 week_3/3_02/lazy_value.cpp)
+add_executable(3_03 week_3/3_03/synchronized_2.cpp)
+add_executable(3_04 week_3/3_04/concurrent_map_2.cpp)
+add_executable(3_05 week_3/3_05/polynomial.cpp)
+add_executable(3_06 week_3/3_06/object_pool.cpp)
 
 
 
