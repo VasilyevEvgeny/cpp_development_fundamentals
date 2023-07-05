@@ -37,6 +37,9 @@ add_executable(3_03 week_3/3_03/synchronized_2.cpp)
 add_executable(3_04 week_3/3_04/concurrent_map_2.cpp)
 add_executable(3_05 week_3/3_05/polynomial.cpp)
 add_executable(3_06 week_3/3_06/object_pool.cpp)
+add_executable(3_07 week_3/3_07/zoo.cpp)
+add_executable(3_08 week_3/3_08/pipeline.cpp)
+add_executable(3_09 week_3/3_09/main1.cpp)
 
 
 
