@@ -40,7 +40,13 @@ add_executable(3_06 week_3/3_06/object_pool.cpp)
 add_executable(3_07 week_3/3_07/zoo.cpp)
 add_executable(3_08 week_3/3_08/pipeline.cpp)
 add_executable(3_09 week_3/3_09/main1.cpp)
+add_executable(3_10 week_3/3_10/main.cpp week_3/3_10/Solution.cpp week_3/3_10/Textures.cpp)
+add_executable(3_11 week_3/3_10/Solution.cpp week_3/3_10/main.cpp)
 
 
+##################
+##### week 4 #####
+##################
 
-
+add_executable(4_01 week_4/4_01/unique_ptr.cpp)
+add_executable(4_02 week_4/4_02/solution.cpp week_4/4_02/test.cpp)
