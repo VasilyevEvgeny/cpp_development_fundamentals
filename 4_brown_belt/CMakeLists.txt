@@ -50,3 +50,13 @@ add_executable(3_11 week_3/3_10/Solution.cpp week_3/3_10/main.cpp)
 
 add_executable(4_01 week_4/4_01/unique_ptr.cpp)
 add_executable(4_02 week_4/4_02/solution.cpp week_4/4_02/test.cpp)
+
+
+##################
+##### week 5 #####
+##################
+
+add_executable(5_01 week_5/5_01/demographic_stats.cpp)
+add_executable(5_02 week_5/5_02/fast.cpp)
+add_executable(5_03 week_5/5_03/fast.cpp)
+add_executable(5_04 week_5/5_04/task_tracker.cpp)
